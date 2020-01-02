@@ -1,0 +1,1490 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<Title>RealHome</Title>
+		<meta charset="UTF-8">	
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href="styles/main.css">
+		<link rel="stylesheet" type="text/css" href="styles/responsive.css">
+		<link rel="stylesheet" type="text/css" href="styles/slick.css">
+		<link rel="stylesheet" type="text/css" href="styles/slick-theme.css">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.1/css/all.css">
+
+		<link rel="stylesheet" href="./element/index.css">
+		
+	</head>
+
+	<body>
+		<div class="header">
+			<div class="container w--100">
+				<div class="d-flex mg-top">
+					<div class="col-md-6 col-10 d-flex align-center">
+						<a href="#">
+								<svg style="width: 50px; height: 50px" id="OBJECTS" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 97.04 93.74"><defs><style>.cls-1{fill:#2a002e;}.cls-2{fill:#3a0244;}</style></defs><title>Logo (2)</title><rect class="cls-1" x="39.45" y="59.66" width="26.73" height="34.08" rx="3.26"/><path class="cls-2" d="M330.93,143.81a15,15,0,0,0-21,.17l-42.62,42.63v40.65a5.9,5.9,0,0,0,5.9,5.9h7a5.9,5.9,0,0,0,5.9-5.9V197l49.07-49.08Z" transform="translate(-267.29 -139.42)"/><path class="cls-1" d="M298.05,155.85c9.9-5.54,24.14,4.24,24.14,4.24l17.59,15.42a18,18,0,0,0,24.55-.8h0l-33.41-31.25a15,15,0,0,0-20.84.35Z" transform="translate(-267.29 -139.42)"/></svg>
+						</a>
+							<div class="search_box">
+							<input class="text" type="text" placeholder="Tìm kiếm">
+							<button class="btn-search">
+								<i class="fas fa-search white"></i>
+							</button>
+						</div>												
+					</div>			
+					<div class="col-md-6 col-2 d-inline-flex justify-content-end align-center">	
+						<a class="menu-mobile open"><i class="fas fa-bars"></i></a>	
+						<ul class="menu">
+							<li class="menu-mobile"><i class="fas fa-times close-items"></i></li>
+							<li class="items"><a href="#">Trở thành chủ nhà</a></li>
+							<li class="items"><a href="#">Đăng nhập</a></li>
+							<li class="items"><a href="#">Đăng kí</a></li>
+						</ul>						
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="home">
+			<div class="home-index">
+				<div class="form container">				
+						<div class="d-flex">
+							<div class="form-search col-lg-6 col-12">
+								<div class="title">
+									MANG ĐẾN CHO BẠN MỘT NƠI Ở LÝ TƯỞNG CHO MỌI NGƯỜI
+								</div>	
+								<div>
+									Với hơn 2000+ chỗ ở
+								</div>
+								<div class="box d-flex px-20">
+									<i class="fas fa-search"></i>
+									<input class="text" type="text" placeholder="Nhập điểm du lịch hoặc tên nơi ở">
+								</div>		
+								<div class="box d-flex px-20">								
+									<div class="PickDate">										
+										<el-date-picker
+										:picker-options="datePickerOptions"
+										  value-format = "dd/MM/yyyy"         
+										  format = "dd/MM/yyyy"			  
+										  v-model="value1"
+										  type="daterange"
+										  prefix-icon = "far fa-calendar"
+										  range-separator="-"
+										  start-placeholder="Ngày đến"
+										  end-placeholder="Ngày về">
+										</el-date-picker>
+									  </div>
+								</div>	
+								<div class="w--100 d-flex px-0">								
+									<div class="col-9 box px-20">																								
+										<div id="SlotNumber">
+												<div class="d-none" id="maxperson">35</div>
+											<el-popover
+												placement="bottom"
+												width="100%"
+												trigger="click">
+												<div class="d-flex slot-item">
+													<div class="slot-text">Người lớn</div>
+													<el-input-number :step="1":min="0" v-model="NguoiLon" @change="NguoiLonChange"></el-input-number>
+												</div>	
+												<div class="d-flex slot-item">
+													<div class="slot-text">
+														<div>
+															Trẻ em
+														</div>
+														<div>
+															Tuổi từ 3–12
+														</div>
+														</div>
+													<el-input-number :step="1":min="0" v-model="TreEm" @change="TreEmChange"></el-input-number>
+												</div>			
+												<div class="d-flex slot-item">
+														<div class="slot-text">
+															<div>
+																Trẻ em
+															</div>
+															<div>
+																Dưới 3 tuổi
+															</div>
+															</div>
+														<el-input-number :step="1":min="0":max="6" v-model="TreSoSinh" @change="TreSoSinhChange"></el-input-number>
+													</div>																					
+												<el-button slot="reference" value="">	
+													<div class="d-flex">
+														<i class="fas fa-users black"></i>
+														<div class="text black pt-6" id="slot"> Số người</div>
+													</div>												
+												</el-button>
+											</el-popover>
+										</div>
+									</div>
+									<div class="col-3 pr-0">
+										<button class="btn-ok">
+											<i class="fas fa-check"></i>
+										</button>
+									</div>
+								</div>			
+							</div>
+							<div class="col-lg-6 px-0 bg">
+								<img class="img-fluid" src="./images/home.png">
+							</div>									
+						</div>															
+				</div>
+			</div>
+		</div>
+
+
+		<div class="container">
+			<section>
+						<div class="title-section">
+								<div class="title">
+									<h2>Ưu đãi độc quyền</h2>
+									<div class="d-flex">
+											<p class="mr-auto d-none d-sm-inline">Chỉ có tại Realhome, book ngay!</p>
+											<a href="#" class="view d-none d-md-inline">Xem thêm</a>
+									</div>									
+								</div>								
+							</div>
+						<div class="slide-3">
+							<div class="post">
+								<a class="frame-post"><img  class="img border" src="./images/uudai/event_1_1572585058.jpg"></a>
+							</div>  
+							<div class="post">
+								<a class="frame-post"><img  class="img border" src="./images/uudai/event_1_1575541567.jpg"></a>
+							</div>  
+							<div class="post">
+								<a class="frame-post"><img  class="img border" src="images/uudai/event_77_1575976492.jpg"></a>
+							</div>  
+							<div class="post">
+								<a class="frame-post"><img  class="img border" src="images/uudai/event_1_1571832331.jpg"></a>
+							</div>     								       					
+						</div>
+	
+						<a href="#" class="view d-md-none">Xem thêm</a>	
+			</section>	
+						
+			<section>
+						<div class="title-section">
+									<div class="title">
+										<h2>Địa điểm nổi bật</h2>
+										<div class="d-flex">
+												<p class="mr-auto d-none d-sm-inline">Cùng chinh phục nhiều địa điểm trên cả nước!</p>
+												<a href="#" class="view d-none d-md-inline">Xem thêm</a>
+										</div>									
+									</div>								
+								</div>
+						<div class="slide-5">																
+							<div class="post">
+									<a class="frame-post">
+										<div>
+											<img class="img-location" src="./images/diadiem/location_10_1559303118.png">
+										</div>
+										<div class="content-location">
+											<div class="title">Vũng tàu</div>
+											<div class="sub">895 HomeStay</div>
+										</div>
+									</a>
+							</div> 
+	
+							<div class="post">
+								<a class="frame-post">
+									<div>
+										<img  class="img-location" src="images/diadiem/location_16_1559303173.png">
+									</div>
+									<div class="content-location">
+										<div class="title">Đà Nẵng</div>
+										<div class="sub">904 HomeStay</div>
+									</div>
+								</a>
+							</div> 
+	
+							<div class="post">
+								<a class="frame-post">
+									<div>
+										<img class="img-location" src="images/diadiem/location_1_1559373089.png">
+									</div>
+									<div class="content-location">
+										<div class="title">Nha Trang</div>
+										<div class="sub">421 HomeStay</div>
+									</div>
+								</a>
+						</div> 
+	
+						<div class="post">
+							<a class="frame-post">
+								<div>
+									<img class="img-location" src="images/diadiem/location_4_1559786177.png">
+								</div>
+								<div class="content-location">
+									<div class="title">Đà Lạt</div>
+									<div class="sub">1238 HomeStay</div>
+								</div>
+							</a>
+					</div> 
+
+					<div class="post">
+						<a class="frame-post">
+							<div>
+								<img class="img-location" src="images/diadiem/location_5_1559786196.png">
+							</div>
+							<div class="content-location">
+								<div class="title">Quảng Ninh</div>
+								<div class="sub">856 HomeStay</div>
+							</div>
+						</a>
+				</div> 
+	
+					<div class="post">
+						<a class="frame-post">
+							<div>
+								<img  class="img-location" src="images/diadiem/location_5_1559735011.png">
+							</div>
+							<div class="content-location">
+								<div class="title">TP HCM</div>
+								<div class="sub">1546 HomeStay</div>
+							</div>
+						</a>
+					</div> 
+						
+					</div> 
+														
+					<a href="#" class="view d-md-none">Xem thêm</a>	
+			</section>
+
+			<section>
+				<div class="title-section">
+					<div class="title">
+						<h2>Không gian ưa thích</h2>
+						<p></p>							
+					</div>					
+				</div>
+				<div class="slide-4">																
+					<div class="post">
+					<a class="frame-post border">
+						<img  class="img img-kind-room" src="images/khongian/can-ho-chung-cu_2906152547.jpg">
+						<div class="content">Căn hộ</div>
+					</a>
+				</div> 
+
+				<div class="post">
+					<a class="frame-post border">
+						<img  class="img img-kind-room" src="images/khongian/bia-biet-thu-ca-dien-btc01.jpg">
+						<div class="content">Biệt thự</div>
+					</a>
+				</div> 
+
+				<div class="post">
+					<a class="frame-post border">
+							<img  class="img img-kind-room" src="images/khongian/homestay-la-gi.jpg">			
+						<div class="content">Nhà riêng</div>
+					</a>
+				</div> 	
+
+				<div class="post">
+					<a class="frame-post border">
+						<img  class="img img-kind-room" src="images/khongian/thoi-hon-vao-noi-o-moi (1).jpg">
+						<div class="content">Studio</div>
+					</a>
+				</div> 
+				
+			</div> 
+												
+						
+			</section>
+
+			<section>
+					<div class="title-section">
+						<div class="title">
+							<h2>Đón đông Hà Nội - Đi thôi đừng đợi</h2>
+							<div class="d-flex">
+									<p class="mr-auto d-none d-sm-inline">Cần gì đi đâu xa, homestay Hà Nội cho mùa đông đáng nhớ. Giảm 15% cho các chỗ ở tại Hà Nội khi nhập mã DECEMBER
+
+									</p>
+									<a href="#" class="view d-none d-md-inline">Xem thêm</a>
+							</div>									
+						</div>								
+					</div>
+					<div class="slide-5 room">																
+						<div class="post">
+								<a class="frame-post" href="hello">
+										<div class="id-post d-none">10</div>
+									<div class="img-frame-room mb-2p">					
+										<img class="img" src="images/roomHN/room_15776_247_1566795834.jpg">
+									</div>
+									
+									<div class="discount d-none">
+											<span class="box-dis"><i class="fas fa-arrow-down"></i>10%</span>
+									</div>
+	
+									<div class="kind-room-title mb-2p">CĂN HỘ</div>
+									<div class="room-title mb-2p">
+										Apartment
+									</div>
+	
+	
+									<div class="room mb-2p"> 
+										6 khách - 2 phòng ngủ - 2 phòng tắm
+									</div>
+	
+									<div class="price mb-2p">
+										<span>1,241,421</span>đ/đêm</span> 
+											
+									</div>
+									
+									<div class="location">
+										Hai bà trưng, Hà nội
+									</div>										
+								</a>							
+						</div> 			
+						<div class="post">
+								<a class="frame-post" href="hello">
+									<div class="id-post d-none">12</div>
+									<div class="img-frame-room mb-2p">					
+										<img class="img" src="images/roomHN/room_17625_39_1543650176.jpg">
+									</div>
+									
+									<div class="discount">
+											<span class="box-dis"><i class="fab fa-hotjar"></i></span>
+									</div>
+	
+									<div class="kind-room-title mb-2p">CĂN HỘ</div>
+									<div class="room-title mb-2p">						
+										ARL Quiet Apartment Near Westlake 
+									</div>
+	
+	
+									<div class="room mb-2p"> 
+										2 khách - 1 phòng ngủ - 1 phòng tắm
+									</div>
+	
+									<div class="price mb-2p">
+										<span>700,000</span> đ/đêm</span> 
+											
+									</div>
+									
+									<div class="location">
+										Tây đô, Hà Nội
+									</div>								
+								</a>							
+						</div>
+						<div class="post">
+								<a class="frame-post" href="hello">
+										<div class="id-post d-none">10</div>
+									<div class="img-frame-room mb-2p">					
+										<img class="img" src="images/roomHN/room_19338_499_1566981912.jpg">
+									</div>
+									
+									<div class="discount">
+											<span class="box-dis"><i class="fas fa-arrow-down"></i>10%</span>
+									</div>
+	
+									<div class="kind-room-title mb-2p">CĂN HỘ</div>
+									<div class="room-title mb-2p">
+										Căn hộ Vinhomes Royal city
+									</div>
+	
+	
+									<div class="room mb-2p"> 
+										4 khách - 2 phòng ngủ - 2 phòng tắm
+									</div>
+	
+									<div class="price mb-2p">
+										<span>1,233,327</span> đ/đêm</span> 
+											
+									</div>
+									
+									<div class="location">
+										Thanh Xuân, Hà Nội
+									</div>
+								</a>							
+						</div> 			
+						<div class="post">
+								<a class="frame-post" href="hello">
+									<div class="id-post d-none">12</div>
+									<div class="img-frame-room mb-2p">					
+										<img class="img" src="images/roomHN/room_25287_17_1558454073.jpg">
+									</div>
+									
+									<div class="discount">
+											<span class="box-dis"><i class="fab fa-hotjar"></i></span>
+									</div>
+	
+									<div class="kind-room-title mb-2p">NHÀ RIÊNG</div>
+									<div class="room-title mb-2p">						
+										Rosie Home
+									</div>
+	
+	
+									<div class="room mb-2p"> 
+										4 khách - 1 phòng ngủ - 1 phòng tắm
+									</div>
+	
+									<div class="price mb-2p">
+										<span>499,000</span> đ/đêm</span> 
+											
+									</div>
+									
+									<div class="location">
+										Ba Đình, Hà Nội
+									</div>								
+								</a>							
+						</div> 	
+						<div class="post">
+								<a class="frame-post" href="hello">
+										<div class="id-post d-none">Noble Apartment</div>
+									<div class="img-frame-room mb-2p">					
+										<img class="img" src="images/roomHN/room_19041_9_1548303109.jpg">
+									</div>
+									
+									<div class="discount">
+											<span class="box-dis"><i class="fas fa-arrow-down"></i>15%</span>
+									</div>
+	
+									<div class="kind-room-title mb-2p">STUDIO</div>
+									<div class="room-title mb-2p">
+										Noble Apartment
+									</div>
+	
+	
+									<div class="room mb-2p"> 
+										1 khách - 1 phòng ngủ - 1 phòng tắm
+									</div>
+	
+									<div class="price mb-2p">
+										<span>425,000</span> đ/đêm</span> 
+											
+									</div>
+									
+									<div class="location">
+										Cầu Giấy, Hà Nội
+									</div>
+	
+							
+								</a>							
+						</div> 			
+						<div class="post">
+								<a class="frame-post" href="hello">
+									<div class="id-post d-none">12</div>
+									<div class="img-frame-room mb-2p">					
+										<img class="img" src="images/roomHN/room_27835_79_1563447245.jpg">
+									</div>
+									
+									<div class="discount">
+											<span class="box-dis"><i class="fab fa-hotjar"></i></span>
+									</div>
+	
+									<div class="kind-room-title mb-2p">CĂN HỘ</div>
+									<div class="room-title mb-2p">						
+										Vinhomes Metropolis 1 bedroom
+									</div>
+	
+	
+									<div class="room mb-2p"> 
+										2 khách - 1 phòng ngủ - 1 phòng tắm
+									</div>
+	
+									<div class="price mb-2p">
+										<span>1,444,0000</span> đ/đêm</span> 
+											
+									</div>
+									
+									<div class="location">
+										Ba Đình, Hà Nội
+									</div>								
+								</a>							
+						</div> 	
+						<div class="post">
+								<a class="frame-post" href="hello">
+										<div class="id-post d-none">10</div>
+									<div class="img-frame-room mb-2p">					
+										<img class="img" src="images/roomHN/room_29958_504_1565951909.jpg">
+									</div>
+									
+									<div class="discount">
+											<span class="box-dis"><i class="fas fa-arrow-down"></i>10%</span>
+									</div>
+	
+									<div class="kind-room-title mb-2p">BIỆT THỰ</div>
+									<div class="room-title mb-2p">
+										Ngô Tràng An
+									</div>
+	
+	
+									<div class="room mb-2p"> 
+										6 khách - 3 phòng ngủ - 3 phòng tắm
+									</div>
+	
+									<div class="price mb-2p">
+										<span>2.000.000</span> đ/đêm</span> 
+											
+									</div>
+									
+									<div class="location">
+										Hai Bà Trưng, Hà Nội
+									</div>
+								</a>							
+						</div> 			
+						<div class="post">
+								<a class="frame-post" href="hello">
+									<div class="id-post d-none">12</div>
+									<div class="img-frame-room mb-2p">					
+										<img class="img" src="images/roomHN/1540393541_04.jpg">
+									</div>
+									
+									<div class="discount d-none">
+											<span class="box-dis"><i class="fab fa-hotjar"></i></span>
+									</div>
+	
+									<div class="kind-room-title mb-2p">BIỆT THỰ</div>
+									<div class="room-title mb-2p">						
+										Green House
+									</div>
+	
+	
+									<div class="room mb-2p"> 
+										8 khách - 3 phòng ngủ - 3 phòng tắm
+									</div>
+	
+									<div class="price mb-2p">
+										<span>2,500,000</span> đ/đêm</span> 
+											
+									</div>
+									
+									<div class="location">
+										Sóc Sơn, Hà Nội
+									</div>								
+								</a>							
+						</div> 	 
+					</div>															
+				<a href="#" class="view d-md-none">Xem thêm</a>			
+			</section>
+	
+			<section>
+					<div class="title-section">
+						<div class="title">
+							<h2>Đi Sài Gòn chọn ngay homestay đúng chất!</h2>
+							<div class="d-flex">
+									<p class="mr-auto  d-none d-sm-inline">Săn ngay homestay Sài Gòn GIÁ TỐT NHẤT NĂM giảm tới 15%. Nhập ngay mã DECEMBER.
+									</p>
+									<a href="#" class="view d-none d-md-inline">Xem thêm</a>
+							</div>
+									
+						</div>								
+					</div>
+					<div class="slide-5 room">																
+						<div class="post">
+								<a class="frame-post" href="hello">
+										<div class="id-post d-none">10</div>
+									<div class="img-frame-room mb-2p">					
+										<img class="img" src="images/roomHCM/Rivergate-Residence-Apartment-9.jpg">
+									</div>
+									
+									<div class="discount d-none">
+											<span class="box-dis"><i class="fas fa-arrow-down"></i>10%</span>
+									</div>
+	
+									<div class="kind-room-title mb-2p">CĂN HỘ</div>
+									<div class="room-title mb-2p">
+										Home Sweet Home Landmark81
+									</div>
+	
+	
+									<div class="room mb-2p"> 
+										2 khách - 1 phòng ngủ - 1 phòng tắm
+									</div>
+	
+									<div class="price mb-2p">
+										<span>947,000</span> đ/đêm</span> 
+											
+									</div>
+									
+									<div class="location">
+										Bình Thạnh, Hồ Chí Minh
+									</div>
+								</a>							
+						</div> 			
+						<div class="post">
+								<a class="frame-post" href="hello">
+									<div class="id-post d-none">12</div>
+									<div class="img-frame-room mb-2p">					
+										<img class="img" src="images/roomHCM/room_12979_316_1564045930.jpg">
+									</div>
+									
+									<div class="discount">
+											<span class="box-dis"><i class="fab fa-hotjar"></i></span>
+									</div>
+	
+									<div class="kind-room-title mb-2p">BIỆT THỰ</div>
+									<div class="room-title mb-2p">						
+										FYSO HomeStay
+									</div>
+	
+	
+									<div class="room mb-2p"> 
+										4 khách - 1 phòng ngủ - 1 phòng tắm
+									</div>
+	
+									<div class="price mb-2p">
+										<span>450,000</span> đ/đêm</span> 
+											
+									</div>
+									
+									<div class="location">
+										Bình Thạnh, Hồ Chí Minh
+									</div>								
+								</a>							
+						</div>
+						<div class="post">
+								<a class="frame-post" href="hello">
+										<div class="id-post d-none">10</div>
+									<div class="img-frame-room mb-2p">					
+										<img class="img" src="images/roomHCM/room_20736_6_1550472569.jpg">
+									</div>
+									
+									<div class="discount d-none">
+											<span class="box-dis"><i class="fas fa-arrow-down"></i>10%</span>
+									</div>
+	
+									<div class="kind-room-title mb-2p">BIỆT THỰ</div>
+									<div class="room-title mb-2p">
+										Hazel's House
+									</div>
+	
+	
+									<div class="room mb-2p"> 
+										4 khách - 1 phòng ngủ - 1 phòng tắm
+									</div>
+	
+									<div class="price mb-2p">
+										<span>600,000</span> đ/đêm</span> 
+											
+									</div>
+									
+									<div class="location">
+										Quận 3, Hồ Chí Minh
+									</div>
+	
+									<div class="rate">
+										<div class="rate-number d-none">4</div>
+										<el-rate
+										v-model="value"
+										disabled
+										text-color="#ff9900">
+									  </el-rate>
+									</div>
+								</a>							
+						</div> 			
+						<div class="post">
+								<a class="frame-post" href="hello">
+									<div class="id-post d-none">12</div>
+									<div class="img-frame-room mb-2p">					
+										<img class="img" src="images/roomHCM/room_20916_182_1570596961.jpg">
+									</div>
+									
+									<div class="discount">
+											<span class="box-dis"><i class="fab fa-hotjar"></i></span>
+									</div>
+	
+									<div class="kind-room-title mb-2p">CĂN HỘ CHUNG CƯ</div>
+									<div class="room-title mb-2p">						
+										Masteri Thảo Điền
+									</div>
+	
+	
+									<div class="room mb-2p"> 
+										4 khách - 2 phòng ngủ - 2 phòng tắm
+									</div>
+	
+									<div class="price mb-2p">
+										<span>1,229,000</span> đ/đêm</span> 
+											
+									</div>
+									
+									<div class="location">
+										Quận 2, Hồ Chí Minh
+									</div>								
+								</a>							
+						</div> 	
+						<div class="post">
+								<a class="frame-post" href="hello">
+										<div class="id-post d-none">10</div>
+									<div class="img-frame-room mb-2p">					
+										<img class="img" src="images/roomHCM/room_23249_4_1554775567.jpg">
+									</div>
+									
+									<div class="discount d-none">
+											<span class="box-dis"><i class="fas fa-arrow-down"></i>10%</span>
+									</div>
+	
+									<div class="kind-room-title mb-2p">NHÀ RIÊNG</div>
+									<div class="room-title mb-2p">
+										Private room
+									</div>
+	
+	
+									<div class="room mb-2p"> 
+										8 khách - 3 phòng ngủ - 3 phòng tắm
+									</div>
+	
+									<div class="price mb-2p">
+										<span>350,000</span> đ/đêm</span> 
+											
+									</div>
+									
+									<div class="location">
+										Bình Thạnh, Hồ Chí Minh
+									</div>
+	
+									<div class="rate">
+										<div class="rate-number d-none">4</div>
+										<el-rate
+										v-model="value"
+										disabled
+										text-color="#ff9900">
+									  </el-rate>
+									</div>
+								</a>							
+						</div> 			
+						<div class="post">
+								<a class="frame-post" href="hello">
+									<div class="id-post d-none">12</div>
+									<div class="img-frame-room mb-2p">					
+										<img class="img" src="images/roomHCM/room_27136_39_1563268810.jpg">
+									</div>
+									
+									<div class="discount">
+											<span class="box-dis"><i class="fab fa-hotjar"></i></span>
+									</div>
+	
+									<div class="kind-room-title mb-2p">NHÀ RIÊNG</div>
+									<div class="room-title mb-2p">						
+										Staycious Home
+									</div>
+	
+	
+									<div class="room mb-2p"> 
+										2 khách - 1 phòng ngủ - 1 phòng tắm
+									</div>
+	
+									<div class="price mb-2p">
+										<span>400,000</span> VNĐ/đêm</span> 
+											
+									</div>
+									
+									<div class="location">
+										Quận 1, Hồ Chí Minh
+									</div>								
+								</a>							
+						</div> 	
+						<div class="post">
+								<a class="frame-post" href="hello">
+										<div class="id-post d-none">10</div>
+									<div class="img-frame-room mb-2p">					
+										<img class="img" src="images/roomHCM/room_16888_74_1552639581.jpg">
+									</div>
+									
+									<div class="discount">
+											<span class="box-dis"><i class="fas fa-arrow-down"></i>10%</span>
+									</div>
+	
+									<div class="kind-room-title mb-2p">CĂN HỘ - STUDIO</div>
+									<div class="room-title mb-2p">
+										Soleil SaiGon
+									</div>
+	
+	
+									<div class="room mb-2p"> 
+										3 khách - 1 phòng ngủ - 1 phòng tắm
+									</div>
+	
+									<div class="price mb-2p">
+										<span>900,000</span> đ/đêm</span> 
+											
+									</div>
+									
+									<div class="location">
+										Quận 4, Hồ Chí Minh
+									</div>
+	
+									<div class="rate">
+										<div class="rate-number d-none">4</div>
+										<el-rate
+										v-model="value"
+										disabled
+										text-color="#ff9900">
+									  </el-rate>
+									</div>
+								</a>							
+						</div> 			
+						<div class="post">
+								<a class="frame-post" href="hello">
+									<div class="id-post d-none">12</div>
+									<div class="img-frame-room mb-2p">					
+										<img class="img" src="images/roomHCM/room_26457_15_1560914124.jpg">
+									</div>
+									
+									<div class="discount">
+											<span class="box-dis"><i class="fab fa-hotjar"></i></span>
+									</div>
+	
+									<div class="kind-room-title mb-2p">CĂN HỘ</div>
+									<div class="room-title mb-2p">						
+										99 Bùi Viện
+									</div>
+	
+	
+									<div class="room mb-2p"> 
+										4 khách - 1 phòng ngủ - 1 phòng tắm
+									</div>
+	
+									<div class="price mb-2p">
+										<span>422,000</span> đ/đêm</span> 
+											
+									</div>
+									
+									<div class="location">
+										Quận 1, Hồ Chí Minh
+									</div>								
+								</a>							
+						</div> 	 
+					</div>															
+				<a href="#" class="view d-md-none">Xem thêm</a>			
+			</section>	
+
+			<section>
+					<div class="title-section">
+						<div class="title">
+							<h2>Đà Nẵng đi thôi, vi vu giá tốt!</h2>
+							<div class="d-flex">
+									<p class="mr-auto  d-none d-sm-inline">Đến Đà Nẵng trải nghiệm nhiều sự kiện thú vị. Giảm 15% cho các chỗ ở tại Đà Nẵng khi nhập mã DECEMBER.
+									</p>
+									<a href="#" class="view d-none d-md-inline">Xem thêm</a>
+							</div>
+									
+						</div>								
+					</div>
+					<div class="slide-5 room">																
+						<div class="post">
+								<a class="frame-post" href="hello">
+										<div class="id-post d-none">10</div>
+									<div class="img-frame-room mb-2p">					
+										<img class="img" src="images/roomDN/room_21841_263_1552274664.jpg">
+									</div>
+									
+									<div class="discount d-none">
+											<span class="box-dis"><i class="fas fa-arrow-down"></i>10%</span>
+									</div>
+	
+									<div class="kind-room-title mb-2p">CĂN HỘ</div>
+									<div class="room-title mb-2p">
+										Tropical House
+									</div>
+	
+	
+									<div class="room mb-2p"> 
+										6 khách - 2 phòng ngủ - 1 phòng tắm
+									</div>
+	
+									<div class="price mb-2p">
+										<span>950,000</span> đ/đêm</span> 
+											
+									</div>
+									
+									<div class="location">
+										Sơn Trà, Đà Nẵng 
+									</div>
+								</a>							
+						</div> 			
+						<div class="post">
+								<a class="frame-post" href="hello">
+									<div class="id-post d-none">12</div>
+									<div class="img-frame-room mb-2p">					
+										<img class="img" src="images/roomDN/room_22939_55_1554176879.jpg">
+									</div>
+									
+									<div class="discount d-none">
+											<span class="box-dis"><i class="fab fa-hotjar"></i></span>
+									</div>
+	
+									<div class="kind-room-title mb-2p">NHÀ RIÊNG</div>
+									<div class="room-title mb-2p">						
+										Lahouse
+									</div>
+	
+	
+									<div class="room mb-2p"> 
+										2 khách - 1 phòng ngủ - 1 phòng tắm
+									</div>
+	
+									<div class="price mb-2p">
+										<span>750,000</span> đ/đêm</span> 
+											
+									</div>
+									
+									<div class="location">
+										Sơn Trà, Đà Nẵng 
+									</div>								
+								</a>							
+						</div>
+						<div class="post">
+								<a class="frame-post" href="hello">
+										<div class="id-post d-none">10</div>
+									<div class="img-frame-room mb-2p">					
+										<img class="img" src="images/roomDN/room_24152_74_1570698742.jpg">
+									</div>
+									
+									<div class="discount">
+											<span class="box-dis"><i class="fas fa-arrow-down"></i>10%</span>
+									</div>
+	
+									<div class="kind-room-title mb-2p">CĂN HỘ</div>
+									<div class="room-title mb-2p">
+										Dragon View Apartment
+									</div>
+	
+	
+									<div class="room mb-2p"> 
+										4 khách - 2 phòng ngủ - 2 phòng tắm
+									</div>
+	
+									<div class="price mb-2p">
+										<span>680,000</span> đ/đêm</span> 
+											
+									</div>
+									
+									<div class="location">
+										Sơn Trà, Đà Nẵng
+									</div>
+								</a>							
+						</div> 			
+						<div class="post">
+								<a class="frame-post" href="hello">
+									<div class="id-post d-none">12</div>
+									<div class="img-frame-room mb-2p">					
+										<img class="img" src="images/roomDN/room_24805_4_1557578956.jpg">
+									</div>
+									
+									<div class="discount">
+											<span class="box-dis"><i class="fab fa-hotjar"></i></span>
+									</div>
+	
+									<div class="kind-room-title mb-2p">BIỆT THỰ</div>
+									<div class="room-title mb-2p">						
+										Minh House Da Nang
+									</div>
+	
+	
+									<div class="room mb-2p"> 
+										4 khách - 2 phòng ngủ - 1 phòng tắm
+									</div>
+	
+									<div class="price mb-2p">
+										<span>840,000</span> đ/đêm</span> 
+											
+									</div>
+									
+									<div class="location">
+										Sơn Trà, Đà Nẵng
+									</div>								
+								</a>							
+						</div> 	
+						<div class="post">
+								<a class="frame-post" href="hello">
+										<div class="id-post d-none">10</div>
+									<div class="img-frame-room mb-2p">					
+										<img class="img" src="images/roomDN/room_28595_24_1564468285.jpg">
+									</div>
+									
+									<div class="discount d-none">
+											<span class="box-dis"><i class="fas fa-arrow-down"></i>10%</span>
+									</div>
+	
+									<div class="kind-room-title mb-2p">CĂN HỘ DỊCH VỤ</div>
+									<div class="room-title mb-2p">
+										Mường Thanh Apartment
+									</div>
+	
+	
+									<div class="room mb-2p"> 
+										6 khách - 2 phòng ngủ - 2 phòng tắm
+									</div>
+	
+									<div class="price mb-2p">
+										<span>1,344,000</span> đ/đêm</span> 
+											
+									</div>
+									
+									<div class="location">
+										Sơn Trà, Đà Nẵng
+									</div>
+								</a>							
+						</div> 			
+						<div class="post">
+								<a class="frame-post" href="hello">
+									<div class="id-post d-none">12</div>
+									<div class="img-frame-room mb-2p">					
+										<img class="img" src="images/roomDN/room_28922_338_1564807803.jpg">
+									</div>
+									
+									<div class="discount d-none">
+											<span class="box-dis"><i class="fab fa-hotjar"></i></span>
+									</div>
+	
+									<div class="kind-room-title mb-2p">STUDIO</div>
+									<div class="room-title mb-2p">						
+										202 Summer 
+									</div>
+	
+	
+									<div class="room mb-2p"> 
+										2 khách - 1 phòng ngủ - 1 phòng tắm
+									</div>
+	
+									<div class="price mb-2p">
+										<span>419,000</span> đ/đêm</span> 
+											
+									</div>
+									
+									<div class="location">
+										Sơn Trà, Đà Nẵng
+									</div>								
+								</a>							
+						</div> 	
+						<div class="post">
+								<a class="frame-post" href="hello">
+										<div class="id-post d-none">10</div>
+									<div class="img-frame-room mb-2p">					
+										<img class="img" src="images/roomHN/room_19338_499_1566981912.jpg">
+									</div>
+									
+									<div class="discount">
+											<span class="box-dis"><i class="fas fa-arrow-down"></i>10%</span>
+									</div>
+	
+									<div class="kind-room-title mb-2p">CĂN HỘ</div>
+									<div class="room-title mb-2p">
+										Sơn Trà Home
+									</div>
+	
+	
+									<div class="room mb-2p"> 
+										2 khách - 1 phòng ngủ - 1 phòng tắm
+									</div>
+	
+									<div class="price mb-2p">
+										<span>460,000</span> đ/đêm</span> 
+											
+									</div>
+									
+									<div class="location">
+										Sơn Trà, Đà Nẵng
+									</div>
+								</a>							
+						</div> 			
+						<div class="post">
+								<a class="frame-post" href="hello">
+									<div class="id-post d-none">12</div>
+									<div class="img-frame-room mb-2p">					
+										<img class="img" src="images/roomHN/room_27835_79_1563447245.jpg">
+									</div>
+									
+									<div class="discount">
+											<span class="box-dis"><i class="fab fa-hotjar"></i></span>
+									</div>
+	
+									<div class="kind-room-title mb-2p">BIỆT THỰ</div>
+									<div class="room-title mb-2p">						
+										Mây house
+									</div>
+	
+	
+									<div class="room mb-2p"> 
+										4 khách - 1 phòng ngủ - 1 phòng tắm
+									</div>
+	
+									<div class="price mb-2p">
+										<span>490,000</span> đ/đêm</span> 
+											
+									</div>
+									
+									<div class="location">
+										Sơn Trà, Đà Nẵng
+									</div>								
+								</a>							
+						</div> 	 
+					</div>															
+				<a href="#" class="view d-md-none">Xem thêm</a>			
+			</section>
+	
+			<section>
+					<div class="title-section">
+						<div class="title">
+							<h2>Top chỗ ở hot 1000 độ</h2>
+							<div class="d-flex">
+									<p class="mr-auto d-none d-sm-inline">Khám phá chỗ ở nổi tiếng đã xuất hiện trong các bộ phim & MV
+
+									</p>
+									<a href="#" class="view d-none d-md-inline">Xem thêm</a>
+							</div>
+									
+						</div>								
+					</div>
+					<div class="slide-5 room">																
+						<div class="post">
+								<a class="frame-post" href="hello">
+										<div class="id-post d-none">10</div>
+									<div class="img-frame-room mb-2p">					
+										<img class="img" src="images/RoomHot/1529484407_29432654_962240693931410_2551760754839650304_n.jpg">
+									</div>
+									
+									<div class="discount">
+											<span class="box-dis"><i class="fas fa-arrow-down"></i>10%</span>
+									</div>
+	
+									<div class="kind-room-title mb-2p">BIỆT THỰ</div>
+									<div class="room-title mb-2p">
+										La Villa
+									</div>
+	
+	
+									<div class="room mb-2p"> 
+										35 khách - 4 phòng ngủ - 4 phòng tắm
+									</div>
+	
+									<div class="price mb-2p">
+										<span>6,500,000</span> đ/đêm</span> 
+											
+									</div>
+									
+									<div class="location">
+										Sóc Sơn, Hà Nội
+									</div>
+	
+									
+								</a>							
+						</div> 			
+						<div class="post">
+								<a class="frame-post" href="hello">
+									<div class="id-post d-none">12</div>
+									<div class="img-frame-room mb-2p">					
+										<img class="img" src="images/RoomHot/1531120224_AUBE0293-min.jpg">
+									</div>
+									
+									<div class="discount">
+											<span class="box-dis"><i class="fab fa-hotjar"></i></span>
+									</div>
+	
+									<div class="kind-room-title mb-2p">BIỆT THỰ</div>
+									<div class="room-title mb-2p">						
+										BAVI Padme Home
+									</div>
+	
+	
+									<div class="room mb-2p"> 
+										26 khách - 4 phòng ngủ - 3 phòng tắm
+									</div>
+	
+									<div class="price mb-2p">
+										<span>4,500,000</span> đ/đêm</span> 
+											
+									</div>
+									
+									<div class="location">
+										Ba Vì, Hà Nội
+									</div>								
+								</a>							
+						</div>
+						<div class="post">
+								<a class="frame-post" href="hello">
+										<div class="id-post d-none">10</div>
+									<div class="img-frame-room mb-2p">					
+										<img class="img" src="images/RoomHot/1536218017_41045756_1184021131748289_6537615651068968960_n.jpg">
+									</div>
+									
+									<div class="discount d-none">
+											<span class="box-dis"><i class="fas fa-arrow-down"></i>10%</span>
+									</div>
+	
+									<div class="kind-room-title mb-2p">NHÀ RIÊNG</div>
+									<div class="room-title mb-2p">
+										Phớn House
+									</div>
+	
+	
+									<div class="room mb-2p"> 
+										2 khách - 1 phòng ngủ - 1 phòng tắm
+									</div>
+	
+									<div class="price mb-2p">
+										<span>1,270,000</span> VNĐ/đêm</span> 
+											
+									</div>
+									
+									<div class="location">
+										SaPa, Lào Cai
+									</div>
+	
+								
+								</a>							
+						</div> 			
+						<div class="post">
+								<a class="frame-post" href="hello">
+									<div class="id-post d-none">12</div>
+									<div class="img-frame-room mb-2p">					
+										<img class="img" src="images/RoomHot/1538368442_DSC_1281.jpg">
+									</div>
+									
+									<div class="discount">
+											<span class="box-dis"><i class="fab fa-hotjar"></i></span>
+									</div>
+	
+									<div class="kind-room-title mb-2p">CĂN HỘ</div>
+									<div class="room-title mb-2p">						
+										ChiBu Boutique
+									</div>
+	
+	
+									<div class="room mb-2p"> 
+										2 khách - 1 phòng ngủ - 1 phòng tắm
+									</div>
+	
+									<div class="price mb-2p">
+										<span>3,520,000</span> đ/đêm</span> 
+											
+									</div>
+									
+									<div class="location">
+										Nhơn Trạch, Đồng Nai
+									</div>								
+								</a>							
+						</div> 	
+						<div class="post">
+								<a class="frame-post" href="hello">
+										<div class="id-post d-none">10</div>
+									<div class="img-frame-room mb-2p">					
+										<img class="img" src="images/RoomHot/room_17991_21_1544630429.jpg">
+									</div>
+									
+									<div class="discount d-none">
+											<span class="box-dis"><i class="fas fa-arrow-down"></i>10%</span>
+									</div>
+	
+									<div class="kind-room-title mb-2p">BIỆT THỰ</div>
+									<div class="room-title mb-2p">
+										Ohara Home
+									</div>
+	
+	
+									<div class="room mb-2p"> 
+										8 khách - 3 phòng ngủ - 3 phòng tắm
+									</div>
+	
+									<div class="price mb-2p">
+										<span>1,110,000</span> đ/đêm</span> 
+											
+									</div>
+									
+									<div class="location">
+										Ohara villa
+									</div>
+	
+									
+								</a>							
+						</div> 			
+						<div class="post">
+								<a class="frame-post" href="hello">
+									<div class="id-post d-none">12</div>
+									<div class="img-frame-room mb-2p">					
+										<img class="img" src="images/RoomHot/room_19320_93_1547036536.jpg">
+									</div>
+									
+									<div class="discount d-none">
+											<span class="box-dis"><i class="fab fa-hotjar"></i></span>
+									</div>
+	
+									<div class="kind-room-title mb-2p">BIỆT THỰ</div>
+									<div class="room-title mb-2p">						
+										LÀ HOME
+									</div>
+	
+	
+									<div class="room mb-2p"> 
+										8 khách - 4 phòng ngủ - 4 phòng tắm
+									</div>
+	
+									<div class="price mb-2p">
+										<span>13,000,000</span> đ/đêm</span> 
+											
+									</div>
+									
+									<div class="location">
+										Nha Trang, Khánh Hòa
+									</div>								
+								</a>							
+						</div> 	
+						<div class="post">
+								<a class="frame-post" href="hello">
+										<div class="id-post d-none">10</div>
+									<div class="img-frame-room mb-2p">					
+										<img class="img" src="images/RoomHot/room_22342_3_1557413862.jpg">
+									</div>
+									
+									<div class="discount d-none">
+											<span class="box-dis"><i class="fas fa-arrow-down"></i>10%</span>
+									</div>
+	
+									<div class="kind-room-title mb-2p">NHÀ RIÊNG</div>
+									<div class="room-title mb-2p">
+										Lữu Tấn Inn 
+									</div>
+	
+	
+									<div class="room mb-2p"> 
+										4 khách - 1 phòng ngủ - 1 phòng tắm
+									</div>
+	
+									<div class="price mb-2p">
+										<span>12321</span> VNĐ/đêm</span> 
+											
+									</div>
+									
+									<div class="location">
+										Đà Lạt, Lâm Đồng
+									</div>
+	
+									
+								</a>							
+						</div> 			
+						<div class="post">
+								<a class="frame-post" href="hello">
+									<div class="id-post d-none">12</div>
+									<div class="img-frame-room mb-2p">					
+										<img class="img" src="images/RoomHot/room_23625_169_1566978422.jpg">
+									</div>
+									
+									<div class="discount d-none">
+											<span class="box-dis"><i class="fab fa-hotjar"></i></span>
+									</div>
+	
+									<div class="kind-room-title mb-2p">BIỆT THỰ</div>
+									<div class="room-title mb-2p">						
+										The MoonLight
+									</div>
+	
+	
+									<div class="room mb-2p"> 
+										16 khách - 3 phòng ngủ - 3 phòng tắm
+									</div>
+	
+									<div class="price mb-2p">
+										<span>4,500,000</span> đ/đêm</span> 
+											
+									</div>
+									
+									<div class="location">
+										Sóc Sơn, Hà Nội
+									</div>								
+								</a>							
+						</div> 	 
+					</div>															
+				<a href="#" class="view d-md-none">Xem thêm</a>			
+			</section>	
+
+		
+		</div>
+
+		<div class="footer">
+				<div class="container">
+					<div class="row">
+						<div class="col-xl-3 col-6">
+							<div class="widget">
+								<div class="widget-title">TOP homestay được yêu thích</div>
+								<ul class="widget-menu widget-text">
+									<li>
+										<a href="#">HomeStay Hồ Chí Minh</a>
+									</li>
+									<li>
+										<a href="#">HomeStay Đà Lạt</a>
+									</li>
+									<li>
+										<a href="#">HomeStay Nha Trang</a>
+									</li>
+									<li>
+										<a href="#">HomeStay Đà Nẵng</a>
+									</li>
+									<li>
+										<a href="#">HomeStay Hà Nội</a>
+									</li>
+									<li>
+										<a href="#">HomeStay Đà Nẵng</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-xl-3 col-6">
+								<div class="widget">
+									<div class="widget-title">Không gian ưu thích</div>
+									<ul class="widget-menu widget-text">
+										<li>
+											<a href="#">Căn hộ</a>
+										</li>
+										<li>
+											<a href="#">Biệt thự</a>
+										</li>
+										<li>
+											<a href="#">Nhà riêng</a>
+										</li>
+										<li>
+											<a href="#">Studio</a>
+										</li>
+									</ul>
+								</div>
+							</div> 	
+						<div class="col-xl-3 col-6">
+								<div class="widget">
+									<div class="widget-title">Về Chúng tôi</div>
+									<ul class="widget-menu widget-text">
+										<li>
+											<a href="#">Giới thiệu</a>
+										</li>
+										<li>
+											<a href="#">Chính sách và điều khoản sử dụng</a>
+										</li>
+										<li>
+											<a href="#">Bảo mật</a>
+										</li>
+									</ul>
+								</div>
+							</div> 	
+						<div class="col-xl-3 col-6">
+								<div class="widget">
+									<div class="widget-title">Liên Hệ với chúng tôi</div>
+									
+														
+								</div>
+							</div> 	
+					</div>									
+				</div>	
+				<div class="footer-bottom">			
+					<div class="title">© 2019 RealHome. Toàn bộ bản quyền thuộc RealHome</div>
+				</div>		
+			</div>
+		
+		
+
+			<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+			<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+			
+			 <!-- import Vue before Element-->
+			 <script type="text/javascript" src="./element/vue.js"></script>
+			 <script type="text/javascript" src="./element/index.js"></script>
+			 <script type="text/javascript" src="./js/vi.js"></script>
+	  
+			<script type="text/javascript" src="./js/slick.min.js"></script>
+			<script type="text/javascript" src="./js/custom.js"></script>
+			 
+			<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCObmUDNsw4qthZE2wu2uCtNn776xy197U&callback=initMap" type="text/javascript"></script>
+		  <script  type="text/javascript" src="./js/lightgallery-all.min.js"></script>
+		  
+	</body>
+	</html>
