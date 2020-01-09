@@ -969,7 +969,7 @@ font-weight: normal;
   color: #fff;
   font-weight: bold;
   text-align: center;
-  border-radius: 5px;
+  border-radius: 10px;
   padding: 7px 0;
   box-shadow: 0px 4.04254px 4.04254px rgba(0, 0, 0, 0.25);
 }
@@ -1215,7 +1215,6 @@ width: 100%;
   background: #FFFFFF;
 }
 
-
 .h-45{
   height: 45px;
 }
@@ -1226,4 +1225,51 @@ width: 100%;
 
 .imgcenter{
   margin: auto 0px;
+}
+
+.boxuudai
+{
+  height: 360px;
+  background: #FFFFFF;
+  border: 1px solid #F8F8F8;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+}
+
+.frame-uudai{
+  height: 50%;
+  width: 100%;
+}
+
+.img-uudai{
+  border-radius: 10px 10px 0px 0px;
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.title-uudai{
+  font-weight: bold;
+  font-size: 24px;
+  text-align: center;
+}
+
+.day-uudai{
+  text-align: center;
+  font-size: 18px;
+}
+
+
+.day-uudai .fa-calendar{
+  font-size: 18px;
+}
+
+
+.widget .fa-facebook-square,.widget .fa-instagram, .widget .fa-phone,.widget .fa-envelope{
+  font-size: 16px;
+  font-weight: bold;
+  color: #000;
+  margin-right: 5px;
 }

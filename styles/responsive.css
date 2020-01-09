@@ -11,6 +11,20 @@
 
 @media only screen and (min-width: 768px)
 {
+
+  .title-uudai{
+    font-size: 20px;
+  }
+  
+  .day-uudai{
+    font-size: 14px;
+  }
+  
+  
+  .day-uudai .fa-calendar{
+    font-size: 14px;
+  }
+
   .btn-ok{
     height: 82px;
   }
@@ -94,25 +108,62 @@
 }
 }
 
-@media only screen and (max-width: 768px)
-{
-  .container-1{
-    margin-top: 60px!important;
-  }
-  
-  .slick-prev, .slick-next{
-    width: 45px!important;
-    height: 45px!important;
-  }
+@media only screen and (min-width: 992px){
+    .bg{
+        padding-top: 180px;
+    }
 
-  .slide-room .slick-prev, .slide-room .slick-next{
-    display: none!important;
-  }
+    .el-range-input{
+        font-size: 26px!important;
+        color: #000!important;
+        width: 34%!important;
+        }  
+ }
+
+@media only screen and (min-width: 1200px){
+   .bg{
+       padding-top: 60px;
+   }
+   .el-range-input{
+    font-size: 26px!important;
+    color: #000!important;
+    width: 28%!important;
+    }
+
+    .title-uudai{
+      font-size: 24px;
+    }
+    
+    .day-uudai{
+      font-size: 18px;
+    }
+    
+    
+    .day-uudai .fa-calendar{
+      font-size: 18px;
+    }
 }
 
-@media only screen and (max-width: 576px)
-{
-  
+@media only screen and (min-width: 1300px){
+  .container {
+    max-width: 1296px;
+}
+
+ .bg{
+    padding-top: 0px;
+ }
+
+ .el-range-input{
+    font-size: 26px!important;
+    color: #000!important;
+    width: 25%!important;
+    }
+
+    .el-date-editor .el-range__icon
+    {   
+      font-size: 30px!important;
+      color: #000!important;
+    }
 }
 
 
@@ -163,47 +214,23 @@
   
 }
 
-@media (min-width: 992px){
-    .bg{
-        padding-top: 180px;
-    }
+@media only screen and (max-width: 768px)
+{
+  .container-1{
+    margin-top: 60px!important;
+  }
+  
+  .slick-prev, .slick-next{
+    width: 45px!important;
+    height: 45px!important;
+  }
 
-    .el-range-input{
-        font-size: 26px!important;
-        color: #000!important;
-        width: 34%!important;
-        }
- }
-
-@media (min-width: 1200px){
-   .bg{
-       padding-top: 60px;
-   }
-   .el-range-input{
-    font-size: 26px!important;
-    color: #000!important;
-    width: 28%!important;
-    }
+  .slide-room .slick-prev, .slide-room .slick-next{
+    display: none!important;
+  }
 }
 
-@media (min-width: 1300px){
-  .container {
-    max-width: 1296px;
-}
-
- .bg{
-    padding-top: 0px;
- }
-
- .el-range-input{
-    font-size: 26px!important;
-    color: #000!important;
-    width: 25%!important;
-    }
-
-    .el-date-editor .el-range__icon
-    {   
-      font-size: 30px!important;
-      color: #000!important;
-    }
+@media only screen and (max-width: 576px)
+{
+  
 }
