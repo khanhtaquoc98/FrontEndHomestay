@@ -1273,3 +1273,16 @@ width: 100%;
   color: #000;
   margin-right: 5px;
 }
+
+.main{
+  top: 60px;
+  background-color: red;
+}
+
+.main .img{
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
