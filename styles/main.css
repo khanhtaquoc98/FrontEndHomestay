@@ -155,12 +155,21 @@ input
 
 .menu .items
 {
+  text-align: center;
   display:inline;
   margin-left: 20px;
 }
 
+.bordermenu
+{
+  padding: 0px 10px;
+  border: #000 1px solid;
+  border-radius: 5px;
+}
+
 .menu .items a
 {
+  
   text-decoration:none;
   color: black;
 }
