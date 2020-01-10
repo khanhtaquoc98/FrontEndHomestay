@@ -169,6 +169,14 @@
 
 @media only screen and (max-width: 992px)
 { 
+  .sub-title{
+    font-size: 16px;
+  }
+
+  .mg-15{
+    margin: 0;
+  }
+
   .menu
   {
     top: 0;
@@ -216,6 +224,10 @@
 
 @media only screen and (max-width: 768px)
 {
+  .sub-title{
+    font-size: 13px;
+  }
+
   .container-1{
     margin-top: 60px!important;
   }

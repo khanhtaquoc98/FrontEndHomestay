@@ -41,6 +41,11 @@ input[type=number]::-webkit-outer-spin-button {
   color: #FFFFFF!important;
 }
 
+.mautintuc
+{
+  color: #36D1CC;
+}
+
 .black
 {
   color: #222!important;
@@ -59,6 +64,7 @@ input {
 
 .align-center
 {
+  width: 100%;
   align-items: center;
 }
 
@@ -852,7 +858,7 @@ ul.timeline > li:before {
   text-align: center;
 }
 
-.sidebar{
+.slidebar{
   border: #F8F8F8 solid 1px;
   position: -webkit-sticky;
   position: sticky;
@@ -863,7 +869,15 @@ ul.timeline > li:before {
   padding: 20px;
 }
 
-.sidebar .gia{
+.slidebar-2
+{
+  position: -webkit-sticky;
+  position: sticky;
+  top: 120px;
+  width: 100%;
+}
+
+.slidebar .gia{
   font-size: 28px;
   font-weight: normal;
   text-align: center;
@@ -873,7 +887,7 @@ ul.timeline > li:before {
   font-weight: bold;
 }
 
-.sidebar .box
+.slidebar .box
 {
   height: 40px;
 }
@@ -1286,3 +1300,223 @@ width: 100%;
   background-size: cover;
 }
 
+.blog{
+  font-size: 64px;
+  font-weight: bold;
+  margin-bottom: 52px;
+}
+
+.blog-main-1
+{
+  height: 541px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+}
+
+.blog-main-2
+{
+  height: 262px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.frame-blog{
+  height: 100%;
+  background-color: #000;
+  border-radius: 10px;
+}
+
+.img-blog{
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.muc-chinh
+{
+  position: absolute;
+  top: 30px; 
+  left: 30px;
+}
+
+.tintuc-chinh
+{
+  text-align: center;
+  width: 126px;
+  height: 30px;
+  font-size: 20px;
+  font-weight: normal;
+  color: #fff;
+  background-color: #36D1CC;
+  border-radius: 5px;
+}
+
+.title-chinh
+{
+  position: absolute;
+  bottom: 30px; 
+  left: 30px;
+  font-size: 36px;
+  font-weight: bold;
+  color: #fff;
+  line-height: 130%;
+}
+
+.title-chinh-2
+{
+  position: absolute;
+  bottom: 30px; 
+  left: 30px;
+  font-size: 30px;
+  font-weight: bold;
+  color: #fff;
+  line-height: 130%;
+}
+
+.diadiem-chinh{
+  text-align: center;
+  width: 126px;
+  height: 30px;
+  font-size: 20px;
+  font-weight: normal;
+  color: #fff;
+  background-color: #D15236;
+  border-radius: 5px;
+}
+
+.mg-15{
+  margin-left: 15px;
+}
+
+.item-blog{
+  
+  border: 1px solid #FFFFFF;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+}
+
+.img-blog-item{
+  border-radius: 10px 10px 10px 10px;
+  height: 350px;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.tintuc{
+  height: 30px;
+  width: 126px;
+  border-radius: 5px;
+  border: solid 1px #36D1CC;
+  color: #36D1CC;
+  text-align: center;
+  margin-right: 10px;
+}
+
+.tintuc-1{
+  height: 30px;
+  width: 126px;
+  border-radius: 5px;
+  border: solid 1px #36D1CC;
+  background-color: #36D1CC;
+  color: #fff;
+  text-align: center;
+  margin-right: 10px;
+}
+
+.dulich{
+  height: 30px;
+  width: 126px;
+  border-radius: 5px;
+  border: solid 1px #7136D1;
+  color: #7136D1;
+  text-align: center;
+  margin-right: 10px;
+}
+
+.meo{
+  height: 30px;
+  width: 126px;
+  border-radius: 5px;
+  border: solid 1px #36D174;
+  color: #36D174;
+  text-align: center;
+  margin-right: 10px;
+}
+
+.diadiem{
+  height: 30px;
+  width: 126px;
+  border-radius: 5px;
+  border: solid 1px #D15236;
+  color: #D15236;
+  text-align: center;
+  margin-right: 10px;
+}
+
+.daytintuc{
+  color: #888888;
+}
+
+.mg-20
+{
+  margin-top: 20px;
+}
+
+.title-tintuc
+{
+  margin-top: 40px;
+  font-size: 36px;
+  font-weight: bold;
+  text-align: center;
+  overflow: hidden!important;
+	text-overflow: ellipsis!important;
+	display: -webkit-box!important;
+	-webkit-box-orient: vertical!important;
+  -webkit-line-clamp: 2!important;
+}
+
+.sub-title{
+  margin-top: 20px;
+  font-size: 20px;
+  overflow: hidden!important;
+	text-overflow: ellipsis!important;
+	display: -webkit-box!important;
+	-webkit-box-orient: vertical!important;
+  -webkit-line-clamp: 3!important;
+}
+
+.tintucimgchinh .img
+{
+  width: 100%;
+  height: 471px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.share
+{
+  font-size: 18px;
+}
+
+.mg-10
+{
+  margin: 0px 10px;
+}
+
+.mg-18
+{
+  margin: 0 18px;
+}
+
+.icon-share
+{
+  font-size: 22px;
+}
