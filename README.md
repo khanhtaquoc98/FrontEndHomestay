@@ -1,4 +1,4 @@
-# Design Website Homestay Booking
+# Website Homestay Booking
 
 <p align="center">
    <img width="50%" src ="https://github.com/khanhtaquoc98/Website-Homestay-HTML/blob/master/images/home.png" />
