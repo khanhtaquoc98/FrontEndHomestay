@@ -1,7 +1,7 @@
 # Design Website Homestay Booking
 
 <p align="center">
-   <img width="30%" src ="https://github.com/khanhtaquoc98/Website-Homestay-HTML/blob/master/images/home.png" />
+   <img width="50%" src ="https://github.com/khanhtaquoc98/Website-Homestay-HTML/blob/master/images/home.png" />
 </p>
 
 <br> **Subject:** Human-computer interaction - SE215
@@ -17,7 +17,7 @@ Realhome is created to connect the demand for rental housing between: (1) Organi
 
 ## 2. Demo
 ![Full Map](https://github.com/khanhtaquoc98/Website-Homestay-HTML/blob/master/images/demo-bg.png?raw=true)
-**[Design on Figma](https://www.figma.com/file/xnRhTdyCAi7aTqoEKUFGBt/Index?node-id=0%3A1)**
+**[UI Design on Figma](https://www.figma.com/file/xnRhTdyCAi7aTqoEKUFGBt/Index?node-id=0%3A1)**
 
 
 ## 3. References
