@@ -20,5 +20,9 @@ Realhome is created to connect the demand for rental housing between: (1) Organi
 **[UI Design on Figma](https://www.figma.com/file/xnRhTdyCAi7aTqoEKUFGBt/Index?node-id=0%3A1)**
 
 
+## 3. Tools & Libraries
+- HTML/CSS/JS
+
+
 ## 3. References
 - [Luxstay](https://www.luxstay.com/) - Website booking homestay in VietNam
