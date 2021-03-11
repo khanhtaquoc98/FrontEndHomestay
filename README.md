@@ -24,5 +24,5 @@ Realhome is created to connect the demand for rental housing between: (1) Organi
 - HTML/CSS/JS
 
 
-## 3. References
+## 4. References
 - [Luxstay](https://www.luxstay.com/) - Website booking homestay in VietNam
